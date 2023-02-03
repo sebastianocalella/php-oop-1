@@ -16,7 +16,7 @@
         public $length;
 
 
-        public function __construct($name,$cast,$length){
+        public function __construct($name,Array $cast,$length){
             $this->name = $name;
             $this->cast = $cast;
             $this->length = $length;
@@ -29,9 +29,9 @@
 
     $movieList=[];
 
-    $la_teoria_del_tutto = new Movie('La Teoria del Tutto','Eddie Readmayne, Felicity Jones','140');
+    $la_teoria_del_tutto = new Movie('La Teoria del Tutto',['Eddie Readmayne', 'Felicity Jones'],'140');
     array_push($movieList,$la_teoria_del_tutto);
-    $pretty_woman = new Movie('Pretty Woman', 'Julia Roberts, Richard Gere, Laura San Giacomo','179');
+    $pretty_woman = new Movie('Pretty Woman', ['Julia Roberts', 'Richard Gere', 'Laura San Giacomo'],'179');
     array_push($movieList,$pretty_woman);
 ?>
 
@@ -45,7 +45,11 @@
 
     foreach($movieList as $movieElement){
         echo '<h2>Titolo: '.$movieElement->getMovie()[0].'</h2>
-        <p>Cast: '.$movieElement->getMovie()[1].'<br>
+        <p>Cast: ';
+        foreach($movieElement->getMovie()[1] as $actor){
+            echo $actor.', ';
+        }
+        echo'<br>
         Length: '.$movieElement->getMovie()[2].' minutes</p>';
     }
 ?>
