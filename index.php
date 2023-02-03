@@ -27,16 +27,27 @@
         }
     }
 
+    $movieList=[];
+
     $la_teoria_del_tutto = new Movie('La Teoria del Tutto','Eddie Readmayne, Felicity Jones','140');
+    array_push($movieList,$la_teoria_del_tutto);
+    $pretty_woman = new Movie('Pretty Woman', 'Julia Roberts, Richard Gere, Laura San Giacomo','179');
+    array_push($movieList,$pretty_woman);
 ?>
 
 <h1>Movies</h1>
 
 
 <?php
-    echo '<h2>Titolo: '.$la_teoria_del_tutto->getMovie()[0].'</h2>
-    <p>Cast: '.$la_teoria_del_tutto->getMovie()[1].'<br>
-    Length: '.$la_teoria_del_tutto->getMovie()[2].' minutes</p>';
+    //echo '<h2>Titolo: '.$la_teoria_del_tutto->getMovie()[0].'</h2>
+    //<p>Cast: '.$la_teoria_del_tutto->getMovie()[1].'<br>
+    //Length: '.$la_teoria_del_tutto->getMovie()[2].' minutes</p>';
+
+    foreach($movieList as $movieElement){
+        echo '<h2>Titolo: '.$movieElement->getMovie()[0].'</h2>
+        <p>Cast: '.$movieElement->getMovie()[1].'<br>
+        Length: '.$movieElement->getMovie()[2].' minutes</p>';
+    }
 ?>
 
 
