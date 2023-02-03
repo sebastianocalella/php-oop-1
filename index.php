@@ -53,11 +53,12 @@
         echo'<br>
         Length: '.$movieElement->getMovieElement('length').' minutes<br>
         Genre: ';
+        foreach($movieElement->getMovieElement('type') as $genre){
+            echo $genre.', ';
+        }
         echo'</p>';
         
     }
-    var_dump($la_teoria_del_tutto);
-
 ?>
 
 
