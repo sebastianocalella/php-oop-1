@@ -1,3 +1,9 @@
+<?php 
+    require_once __DIR__.'/models/Movie.php';
+    require_once __DIR__.'/models/movieList.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,37 +13,6 @@
     <title>Php-oop-1</title>
 </head>
 <body>
-    
-
-<?php
-    class Movie{
-        public $name;
-        public $cast;
-        public $length;
-        public $type;
-
-
-        public function __construct($name,Array $cast,$length){
-            $this->name = $name;
-            $this->cast = $cast;
-            $this->length = $length;
-            $this->type;
-        }
-
-        public function getMovieElement($element){
-            return $this->$element;
-        }
-    }
-
-    $movieList=[];
-
-    $la_teoria_del_tutto = new Movie('La Teoria del Tutto',['Eddie Readmayne', 'Felicity Jones'],'140');
-    $la_teoria_del_tutto->type=['drama','romance','historical drama'];
-    array_push($movieList,$la_teoria_del_tutto);
-    $pretty_woman = new Movie('Pretty Woman', ['Julia Roberts', 'Richard Gere', 'Laura San Giacomo'],'179');
-    $pretty_woman->type=['romance','romantic comedy','comedy'];
-    array_push($movieList,$pretty_woman);
-?>
 
 <h1>Movies</h1>
 
