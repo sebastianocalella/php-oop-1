@@ -14,24 +14,28 @@
         public $name;
         public $cast;
         public $length;
+        public $type;
 
 
         public function __construct($name,Array $cast,$length){
             $this->name = $name;
             $this->cast = $cast;
             $this->length = $length;
+            $this->type;
         }
 
-        public function getMovie(){
-            return [$this->name,$this->cast,$this->length];
+        public function getMovieElement($element){
+            return $this->$element;
         }
     }
 
     $movieList=[];
 
     $la_teoria_del_tutto = new Movie('La Teoria del Tutto',['Eddie Readmayne', 'Felicity Jones'],'140');
+    $la_teoria_del_tutto->type=['drama','romance','historical drama'];
     array_push($movieList,$la_teoria_del_tutto);
     $pretty_woman = new Movie('Pretty Woman', ['Julia Roberts', 'Richard Gere', 'Laura San Giacomo'],'179');
+    $pretty_woman->type=['romance','romantic comedy','comedy'];
     array_push($movieList,$pretty_woman);
 ?>
 
@@ -39,19 +43,21 @@
 
 
 <?php
-    //echo '<h2>Titolo: '.$la_teoria_del_tutto->getMovie()[0].'</h2>
-    //<p>Cast: '.$la_teoria_del_tutto->getMovie()[1].'<br>
-    //Length: '.$la_teoria_del_tutto->getMovie()[2].' minutes</p>';
 
     foreach($movieList as $movieElement){
-        echo '<h2>Titolo: '.$movieElement->getMovie()[0].'</h2>
+        echo '<h2>Titolo: '.$movieElement->getMovieElement('name').'</h2>
         <p>Cast: ';
-        foreach($movieElement->getMovie()[1] as $actor){
+        foreach($movieElement->getMovieElement('cast') as $actor){
             echo $actor.', ';
         }
         echo'<br>
-        Length: '.$movieElement->getMovie()[2].' minutes</p>';
+        Length: '.$movieElement->getMovieElement('length').' minutes<br>
+        Genre: ';
+        echo'</p>';
+        
     }
+    var_dump($la_teoria_del_tutto);
+
 ?>
 
 
