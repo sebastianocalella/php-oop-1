@@ -1,6 +1,7 @@
 <?php 
     require_once __DIR__.'/models/Movie.php';
     require_once __DIR__.'/models/movieList.php';
+    require_once __DIR__.'/data.php';
 ?>
 
 
@@ -19,7 +20,7 @@
 
 <?php
 
-    foreach($movieList as $movieElement){
+    /*foreach($movieList as $movieElement){
         echo '<h2>Titolo: '.$movieElement->getMovieElement('name').'</h2>
         <p>Cast: ';
         foreach($movieElement->getMovieElement('cast') as $actor){
@@ -33,6 +34,12 @@
         }
         echo'</p>';
         
+    }
+    */
+
+
+    foreach($movieListTwo as $movieElement){
+        $$movieElement->movie_element = new Movie ($$movieElement->movie_info->name,$$movieElement->movie_info->cast,$$movieElement->movie_info->length);
     }
 ?>
 

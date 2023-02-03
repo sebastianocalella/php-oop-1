@@ -1,6 +1,6 @@
 <?php 
 
-$movieList = [
+$movieListTwo = [
     [
         "movie_element" => "la_teoria_del_tutto",
         "movie_info" => [
