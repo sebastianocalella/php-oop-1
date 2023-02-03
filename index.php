@@ -23,13 +23,22 @@
         }
 
         public function getMovie(){
-            return ($this->name);
+            return [$this->name,$this->cast,$this->length];
         }
     }
 
-
-
+    $la_teoria_del_tutto = new Movie('La Teoria del Tutto','Eddie Readmayne, Felicity Jones','140');
 ?>
+
+<h1>Movies</h1>
+
+
+<?php
+    echo '<h2>Titolo: '.$la_teoria_del_tutto->getMovie()[0].'</h2>
+    <p>Cast: '.$la_teoria_del_tutto->getMovie()[1].'<br>
+    Length: '.$la_teoria_del_tutto->getMovie()[2].' minutes</p>';
+?>
+
 
 
 </body>
