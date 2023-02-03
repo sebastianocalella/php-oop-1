@@ -14,9 +14,16 @@
         public $name;
         public $cast;
         public $length;
+
+
+        public function __construct($name,$cast,$length){
+            $this->name = $name;
+            $this->cast = $cast;
+            $this->length = $length;
+        }
+
     }
 
-    
 
 
 ?>
