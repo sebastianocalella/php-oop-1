@@ -22,6 +22,9 @@
             $this->length = $length;
         }
 
+        public function getMovie(){
+            return ($this->name);
+        }
     }
 
 
